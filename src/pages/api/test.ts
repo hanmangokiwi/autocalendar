@@ -17,7 +17,7 @@ type Data = {
 //   res.status(200).json({ name: 'John Doe' })
 // }
 
-export default withApiAuthRequired(async (req, res) => {
+export default OwnsRecord(async (req: any, res: any) => {
   try {
     const { accessToken } = await getAccessToken(req, res);
     const session = await getSession(req, res);
